@@ -21,7 +21,7 @@ namespace EFwithDB.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("EFwithDB.Models.Employee", b =>
+            modelBuilder.Entity("EFwithDB.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,18 +29,18 @@ namespace EFwithDB.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("EmployeeName")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Salary")
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }

@@ -5,24 +5,24 @@
 namespace EFwithDB.Migrations
 {
     /// <inheritdoc />
-    public partial class createEmployeeTable : Migration
+    public partial class prodtsk : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Employees",
+                name: "Products",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Salary = table.Column<double>(type: "float", nullable: false),
-                    Age = table.Column<int>(type: "int", nullable: false)
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Price = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Employees", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                 });
         }
 
@@ -30,7 +30,7 @@ namespace EFwithDB.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Employees");
+                name: "Products");
         }
     }
 }

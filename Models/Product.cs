@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace EFwithDB.Models
 {
-    internal class Employee
+    internal class Product
     {
         public int Id { get; set; }
-        public string? EmployeeName { get; set; }
-        public double Salary { get; set; }
-        public int Age { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public double Price { get; set; }
     }
 }

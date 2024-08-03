@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFwithDB.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240803154141_UpdateDBName")]
-    partial class UpdateDBName
+    [Migration("20240803214027_prodtsk")]
+    partial class prodtsk
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace EFwithDB.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("EFwithDB.Models.Employee", b =>
+            modelBuilder.Entity("EFwithDB.Models.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,18 +32,18 @@ namespace EFwithDB.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("Age")
-                        .HasColumnType("int");
-
-                    b.Property<string>("EmployeeName")
+                    b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<double>("Salary")
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Employees");
+                    b.ToTable("Products");
                 });
 #pragma warning restore 612, 618
         }
